@@ -386,17 +386,17 @@ for (let i = 0; i < LENGTH; i++) {
   if (ssmtResult.bearish || ssmtResult.bullish) {
     logSSMTStage('1', ssmtResult, candleDate, '1D', 'n/a', previousCandleDate);
 
-    const lowerTimeframeData = {
-      timestamps: BTC_15M.openTime || BTC_15M.closeTime || [],
-      btcHigh: BTC_15M.high || [],
-      btcLow: BTC_15M.low || [],
-      ethHigh: ETH_15M.high || [],
-      ethLow: ETH_15M.low || [],
-    };
+    // const lowerTimeframeData = {
+    //   timestamps: BTC_15M.openTime || BTC_15M.closeTime || [],
+    //   btcHigh: BTC_15M.high || [],
+    //   btcLow: BTC_15M.low || [],
+    //   ethHigh: ETH_15M.high || [],
+    //   ethLow: ETH_15M.low || [],
+    // };
 
-    const lowerTimeframeSessionSSMT = detectSessionCycleSSMT(lowerTimeframeData, '15m');
-    if (lowerTimeframeSessionSSMT.bearish || lowerTimeframeSessionSSMT.bullish) {
-      logSSMTStage('2', lowerTimeframeSessionSSMT, candleDate, lowerTimeframeSessionSSMT.timeframe, lowerTimeframeSessionSSMT.session, previousCandleDate);
-    }
+    // const lowerTimeframeSessionSSMT = detectSessionCycleSSMT(lowerTimeframeData, '15m');
+    // if (lowerTimeframeSessionSSMT.bearish || lowerTimeframeSessionSSMT.bullish) {
+    //   logSSMTStage('2', lowerTimeframeSessionSSMT, candleDate, lowerTimeframeSessionSSMT.timeframe, lowerTimeframeSessionSSMT.session, previousCandleDate);
+    // }
   }
 }
