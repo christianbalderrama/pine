@@ -1,0 +1,15 @@
+export declare const KNOWN_NAMESPACES: string[];
+export declare const NAMESPACES_LIKE: string[];
+export declare const ASYNC_METHODS: string[];
+export declare const VIEWPORT_DEPENDENT_BUILTINS: string[];
+export declare const CALLSITE_ID_NAMESPACES: string[];
+export declare const CALLSITE_ID_FUNCTIONS: string[];
+export declare const FACTORY_METHODS: string[];
+export declare const NAMESPACE_COLLISION_NAMES: Set<string>;
+export declare const JS_RESERVED_WORDS: Set<string>;
+export declare const BUILTIN_METHOD_NAMES: Set<string>;
+export declare const ORDERFLOW_METHODS: Record<string, Set<string>>;
+export declare const FOOTPRINT_ROW_METHODS: Set<string>;
+export declare const CONTEXT_DATA_VARS: string[];
+export declare const CONTEXT_PINE_VARS: string[];
+export declare const CONTEXT_CORE_VARS: string[];

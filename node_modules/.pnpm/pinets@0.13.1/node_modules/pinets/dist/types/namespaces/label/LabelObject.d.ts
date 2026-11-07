@@ -1,0 +1,45 @@
+export declare function resetLabelIdCounter(): void;
+export declare class LabelObject {
+    id: number;
+    x: number;
+    y: number;
+    text: string;
+    xloc: string;
+    yloc: string;
+    color: string;
+    style: string;
+    textcolor: string;
+    size: string;
+    textalign: string;
+    tooltip: string;
+    text_font_family: string;
+    force_overlay: boolean;
+    text_formatting: string;
+    _deleted: boolean;
+    _helper: any;
+    /** Bar index at which this object was created (for streaming rollback) */
+    _createdAtBar: number;
+    constructor(x: number, y: number, text?: string, xloc?: string, yloc?: string, color?: string, style?: string, textcolor?: string, size?: string, textalign?: string, tooltip?: string, text_font_family?: string, force_overlay?: boolean, text_formatting?: string);
+    set_x(x: number): void;
+    set_y(y: number): void;
+    set_xy(x: number, y: number): void;
+    set_text(text: string): void;
+    set_color(color: string): void;
+    set_textcolor(textcolor: string): void;
+    set_size(size: string): void;
+    set_style(style: string): void;
+    set_textalign(textalign: string): void;
+    set_tooltip(tooltip: string): void;
+    set_xloc(x: number, xloc: string): void;
+    set_yloc(yloc: string): void;
+    set_point(point: any): void;
+    set_text_font_family(family: string): void;
+    set_text_formatting(formatting: string): void;
+    get_x(): number;
+    get_y(): number;
+    get_text(): string;
+    delete(): void;
+    copy(): LabelObject;
+    _clone(): LabelObject;
+    toPlotData(): any;
+}

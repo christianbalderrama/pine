@@ -1,0 +1,28 @@
+export declare const CONTEXT_NAME = "$";
+export declare const ASTFactory: {
+    createIdentifier(name: string): any;
+    createLiteral(value: any): any;
+    createMemberExpression(object: any, property: any, computed?: boolean): any;
+    createContextIdentifier(): any;
+    createLocalContextIdentifier(): any;
+    createContextVariableReference(kind: string, name: string): any;
+    createLocalContextVariableReference(kind: string, name: string): any;
+    createDynamicContextVariableReference(kind: string, dynamicKey: any): any;
+    createContextVariableAccess0(kind: string, name: string): any;
+    createDynamicContextVariableAccess0(kind: string, dynamicKey: any): any;
+    createArrayAccess(object: any, index: any): any;
+    createCallExpression(callee: any, args: any[]): any;
+    createAssignmentExpression(left: any, right: any, operator?: string): any;
+    createExpressionStatement(expression: any): any;
+    createInitCall(targetVarRef: any, value: any, lookbehind?: any): any;
+    createInitVarCall(targetVarRef: any, value: any, varip?: boolean): any;
+    createGetCall(source: any, index: any): any;
+    createSetCall(target: any, value: any): any;
+    createMathEqCall(left: any, right: any): any;
+    createMathNeqCall(left: any, right: any): any;
+    createMathCompareCall(method: string, left: any, right: any): any;
+    createMathIntDivCall(left: any, right: any): any;
+    createWrapperFunction(body: any): any;
+    createVariableDeclaration(name: string, init: any): any;
+    createAwaitExpression(argument: any): any;
+};

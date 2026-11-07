@@ -1,0 +1,41 @@
+export declare function resetLineIdCounter(): void;
+export declare class LineObject {
+    id: number;
+    x1: number;
+    y1: number;
+    x2: number;
+    y2: number;
+    xloc: string;
+    extend: string;
+    color: string;
+    style: string;
+    width: number;
+    force_overlay: boolean;
+    _deleted: boolean;
+    _helper: any;
+    /** Bar index at which this object was created (for streaming rollback) */
+    _createdAtBar: number;
+    constructor(x1: number, y1: number, x2: number, y2: number, xloc?: string, extend?: string, color?: string, style?: string, width?: number, force_overlay?: boolean);
+    set_x1(x: number): void;
+    set_y1(y: number): void;
+    set_x2(x: number): void;
+    set_y2(y: number): void;
+    set_xy1(x: number, y: number): void;
+    set_xy2(x: number, y: number): void;
+    set_color(color: string): void;
+    set_width(width: number): void;
+    set_style(style: string): void;
+    set_extend(extend: string): void;
+    set_xloc(x1: number, x2: number, xloc: string): void;
+    set_first_point(point: any): void;
+    set_second_point(point: any): void;
+    get_x1(): number;
+    get_y1(): number;
+    get_x2(): number;
+    get_y2(): number;
+    get_price(x: number): number;
+    delete(): void;
+    copy(): LineObject;
+    _clone(): LineObject;
+    toPlotData(): any;
+}
