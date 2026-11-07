@@ -227,8 +227,30 @@ function detectDailySSMT({ btcHigh, btcLow, ethHigh, ethLow, timestamps = [] }) 
   const ethPrevLow = ethLow[ethLow.length - 2];
   const ethCurLow = ethLow[ethLow.length - 1];
 
-  const bearish = btcCurHigh > btcPrevHigh && ethCurHigh <= ethPrevHigh;
-  const bullish = btcCurLow < btcPrevLow && ethCurLow >= ethPrevLow;
+  /**
+   * SSMT Conditions:
+   * 
+   * `Bearish SSMT`
+   *  BTC makes (HH) while ETH makes (HL)
+   *                 OR
+   *  ETH makes (HH) while BTC makes (HL)
+   * 
+   * `Bullish SSMT`
+   *  BTC makes (LL) while ETH makes (LH)
+   *                        OR
+   *  ETH makes (LL) while BTC makes (LH).
+   * 
+   * `Conflicting SSMT`
+   *  Both bearish and bullish conditions are met in the same candle reference.
+   */
+  const bearish = 
+    (btcCurHigh > btcPrevHigh && ethCurHigh <= ethPrevHigh) ||
+    (ethCurHigh > ethPrevHigh && btcCurHigh <= btcPrevHigh);
+  
+  const bullish =
+    (btcCurLow < btcPrevLow && ethCurLow >= ethPrevLow) ||
+    (ethCurLow < ethPrevLow && btcCurLow >= btcPrevLow);
+
   const isConflicting = bearish && bullish;
 
   if (isConflicting) {
